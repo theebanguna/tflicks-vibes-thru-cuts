@@ -189,7 +189,7 @@ h1, h2 {
 .clients-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
