@@ -448,46 +448,45 @@ footer {
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Mobile & smaller tablets */
+@media (max-width: 768px) {
   .navbar {
-    padding: 8px 15px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 15px 20px;
   }
-  .logo img {
-    height: 50px;
-  }
+
   .nav-links {
-    gap: 10px;
-  list-style: none;
-  display: flex;
-}
-  .social-links {
+    flex-direction: row;   /* keep horizontal */
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;       /* wrap if too many links */
     justify-content: center;
-    width: 100%;
+  }
+
+  .social-links {
     margin-top: 10px;
   }
+
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+
   .hero p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    padding: 0 15px;
   }
-  .btn, .btn-primary, .btn-secondary {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+
+  .cta-buttons {
+    flex-direction: column;
   }
-  .about-card {
-    font-size: 0.95rem;
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
-  .service-card li {
-    font-size: 0.85rem;
-  }
-  .footer {
-    font-size: 0.8rem;
+
+  .client-logo {
+    width: 150px;
+    height: 150px;
   }
 }
