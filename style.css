@@ -448,7 +448,6 @@ footer {
   }
 }
 
-/* Mobile & smaller tablets */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -457,11 +456,12 @@ footer {
   }
 
   .nav-links {
-    flex-direction: row;   /* keep horizontal */
-    gap: 15px;
-    margin-top: 10px;
-    flex-wrap: wrap;       /* wrap if too many links */
+    flex-direction: row;   /* always horizontal */
+    flex-wrap: wrap;       /* wrap if too many */
     justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
   }
 
   .social-links {
@@ -488,24 +488,5 @@ footer {
   .client-logo {
     width: 150px;
     height: 150px;
-  }
-}
-/* Portrait (keep nav horizontal) */
-@media (max-width: 768px) and (orientation: portrait) {
-  .nav-links {
-    flex-direction: row;    /* horizontal */
-    flex-wrap: wrap;        /* wrap if needed */
-    justify-content: center;
-    gap: 12px;
-  }
-}
-
-/* Landscape (stack nav for better fit) */
-@media (max-width: 768px) and (orientation: landscape) {
-  .nav-links {
-    flex-direction: row;    /* horizontal */
-    flex-wrap: wrap;        /* wrap if needed */
-    justify-content: center;
-    gap: 12px;
   }
 }
