@@ -490,3 +490,21 @@ footer {
     height: 150px;
   }
 }
+/* Portrait (keep nav horizontal) */
+@media (max-width: 768px) and (orientation: portrait) {
+  .nav-links {
+    flex-direction: row;    /* horizontal */
+    flex-wrap: wrap;        /* wrap if needed */
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+/* Landscape (stack nav for better fit) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav-links {
+    flex-direction: column; /* vertical for tight height */
+    align-items: center;
+    gap: 10px;
+  }
+}
