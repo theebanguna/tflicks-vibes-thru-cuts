@@ -12,6 +12,7 @@
   --white: #f5f5f5;
   --grey: #1a1a1a;
 }
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -24,6 +25,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -47,8 +49,13 @@
   color: white;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .social-links a {
-  margin-left: 20px;
   font-size: 22px;
   color: gold;
   text-decoration: none;
@@ -88,15 +95,14 @@ h1, h2 {
 .hero {
   height: 100vh;
   background-image: url("Wallpaper.jpg");
-  background-size: cover;        /* makes the image cover the whole section */
-  background-position: center;   /* centers the image */
-  background-repeat: no-repeat;  /* prevents tiling */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .hero .overlay {
   position: absolute;
@@ -109,6 +115,7 @@ h1, h2 {
   position: relative;
   text-align: center;
   z-index: 1;
+  padding: 0 20px;
 }
 
 .hero h1 {
@@ -136,6 +143,7 @@ h1, h2 {
   background: var(--white);
   color: var(--black);
 }
+
 .client-logo {
   width: 200px;
   height: 200px;
@@ -170,6 +178,7 @@ h1, h2 {
   max-width: 1000px;
   margin: auto;
   text-align: left;
+  padding: 0 20px;
 }
 
 .about-badge {
@@ -220,6 +229,7 @@ h1, h2 {
   display: flex;
   gap: 15px;
   margin: 30px 0;
+  flex-wrap: wrap;
 }
 
 .cta-buttons a {
@@ -284,6 +294,7 @@ footer {
   color: var(--white);
 }
 
+/* Services */
 .services {
   background: #111;
   color: #f5f5f5;
@@ -305,12 +316,12 @@ footer {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .service-card {
-  background: #1a1a1a; /* dark grey card */
+  background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 10px;
   padding: 20px;
@@ -320,7 +331,7 @@ footer {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); /* gold glow */
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .service-card h3 {
@@ -371,19 +382,20 @@ footer {
   border: none;
   border-radius: 10px;
 }
+
 /* Centered Notes Section */
 .service-note {
-  background: rgba(0, 0, 0, 0.7); /* semi-transparent black */
-  border-left: 5px solid #d4af37; /* gold accent bar */
+  background: rgba(0, 0, 0, 0.7);
+  border-left: 5px solid #d4af37;
   padding: 20px;
-  margin: 30px auto; /* auto centers it */
+  margin: 30px auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   color: #f5f5f5;
   font-size: 16px;
   line-height: 1.6;
-  max-width: 800px; /* restrict width for readability */
-  text-align: center; /* center-align text */
+  max-width: 800px;
+  text-align: center;
 }
 
 .service-note p {
@@ -391,16 +403,88 @@ footer {
 }
 
 .service-note strong {
-  color: #ffd700; /* gold highlight */
+  color: #ffd700;
 }
 
 .service-note a {
-  color: #ffcc33; /* gold link */
+  color: #ffcc33;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .service-note a:hover {
-  color: #ffffff; /* turns white on hover */
+  color: #ffffff;
+}
+
+/* ============================= */
+/* Responsive Design Adjustments */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo img {
+    height: 60px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+  .logo img {
+    height: 50px;
+  }
+  .nav-links {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .btn, .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .about-card {
+    font-size: 0.95rem;
+  }
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-card li {
+    font-size: 0.85rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+  }
 }
