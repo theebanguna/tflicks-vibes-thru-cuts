@@ -503,7 +503,7 @@ footer {
 /* Landscape (stack nav for better fit) */
 @media (max-width: 768px) and (orientation: landscape) {
   .nav-links {
-    flex-direction: column; /* vertical for tight height */
+    flex-direction: row; /* vertical for tight height */
     align-items: center;
     gap: 10px;
   }
